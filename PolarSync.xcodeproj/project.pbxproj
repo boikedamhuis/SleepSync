@@ -1,0 +1,536 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		21922D101BD7FF80005EEF5B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21922D0F1BD7FF80005EEF5B /* main.m */; };
+		21922D131BD7FF80005EEF5B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21922D121BD7FF80005EEF5B /* AppDelegate.m */; };
+		21922D161BD7FF80005EEF5B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21922D151BD7FF80005EEF5B /* ViewController.m */; };
+		21922D191BD7FF80005EEF5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21922D171BD7FF80005EEF5B /* Main.storyboard */; };
+		21922D1C1BD7FF80005EEF5B /* PolarSync.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21922D1A1BD7FF80005EEF5B /* PolarSync.xcdatamodeld */; };
+		21922D1E1BD7FF80005EEF5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21922D1D1BD7FF80005EEF5B /* Assets.xcassets */; };
+		21922D211BD7FF80005EEF5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21922D1F1BD7FF80005EEF5B /* LaunchScreen.storyboard */; };
+		21922D2C1BD7FF80005EEF5B /* PolarSyncTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21922D2B1BD7FF80005EEF5B /* PolarSyncTests.m */; };
+		21922D371BD7FF80005EEF5B /* PolarSyncUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21922D361BD7FF80005EEF5B /* PolarSyncUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		21922D281BD7FF80005EEF5B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21922D031BD7FF80005EEF5B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 21922D0A1BD7FF80005EEF5B;
+			remoteInfo = PolarSync;
+		};
+		21922D331BD7FF80005EEF5B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21922D031BD7FF80005EEF5B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 21922D0A1BD7FF80005EEF5B;
+			remoteInfo = PolarSync;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		21922D0B1BD7FF80005EEF5B /* PolarSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PolarSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		21922D0F1BD7FF80005EEF5B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		21922D111BD7FF80005EEF5B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		21922D121BD7FF80005EEF5B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		21922D141BD7FF80005EEF5B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		21922D151BD7FF80005EEF5B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		21922D181BD7FF80005EEF5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		21922D1B1BD7FF80005EEF5B /* PolarSync.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PolarSync.xcdatamodel; sourceTree = "<group>"; };
+		21922D1D1BD7FF80005EEF5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		21922D201BD7FF80005EEF5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		21922D221BD7FF80005EEF5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21922D271BD7FF80005EEF5B /* PolarSyncTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PolarSyncTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		21922D2B1BD7FF80005EEF5B /* PolarSyncTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PolarSyncTests.m; sourceTree = "<group>"; };
+		21922D2D1BD7FF80005EEF5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21922D321BD7FF80005EEF5B /* PolarSyncUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PolarSyncUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		21922D361BD7FF80005EEF5B /* PolarSyncUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PolarSyncUITests.m; sourceTree = "<group>"; };
+		21922D381BD7FF80005EEF5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		21922D081BD7FF80005EEF5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21922D241BD7FF80005EEF5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21922D2F1BD7FF80005EEF5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		21922D021BD7FF80005EEF5B = {
+			isa = PBXGroup;
+			children = (
+				21922D0D1BD7FF80005EEF5B /* PolarSync */,
+				21922D2A1BD7FF80005EEF5B /* PolarSyncTests */,
+				21922D351BD7FF80005EEF5B /* PolarSyncUITests */,
+				21922D0C1BD7FF80005EEF5B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		21922D0C1BD7FF80005EEF5B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				21922D0B1BD7FF80005EEF5B /* PolarSync.app */,
+				21922D271BD7FF80005EEF5B /* PolarSyncTests.xctest */,
+				21922D321BD7FF80005EEF5B /* PolarSyncUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		21922D0D1BD7FF80005EEF5B /* PolarSync */ = {
+			isa = PBXGroup;
+			children = (
+				21922D111BD7FF80005EEF5B /* AppDelegate.h */,
+				21922D121BD7FF80005EEF5B /* AppDelegate.m */,
+				21922D141BD7FF80005EEF5B /* ViewController.h */,
+				21922D151BD7FF80005EEF5B /* ViewController.m */,
+				21922D171BD7FF80005EEF5B /* Main.storyboard */,
+				21922D1D1BD7FF80005EEF5B /* Assets.xcassets */,
+				21922D1F1BD7FF80005EEF5B /* LaunchScreen.storyboard */,
+				21922D221BD7FF80005EEF5B /* Info.plist */,
+				21922D1A1BD7FF80005EEF5B /* PolarSync.xcdatamodeld */,
+				21922D0E1BD7FF80005EEF5B /* Supporting Files */,
+			);
+			path = PolarSync;
+			sourceTree = "<group>";
+		};
+		21922D0E1BD7FF80005EEF5B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				21922D0F1BD7FF80005EEF5B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		21922D2A1BD7FF80005EEF5B /* PolarSyncTests */ = {
+			isa = PBXGroup;
+			children = (
+				21922D2B1BD7FF80005EEF5B /* PolarSyncTests.m */,
+				21922D2D1BD7FF80005EEF5B /* Info.plist */,
+			);
+			path = PolarSyncTests;
+			sourceTree = "<group>";
+		};
+		21922D351BD7FF80005EEF5B /* PolarSyncUITests */ = {
+			isa = PBXGroup;
+			children = (
+				21922D361BD7FF80005EEF5B /* PolarSyncUITests.m */,
+				21922D381BD7FF80005EEF5B /* Info.plist */,
+			);
+			path = PolarSyncUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		21922D0A1BD7FF80005EEF5B /* PolarSync */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21922D3B1BD7FF80005EEF5B /* Build configuration list for PBXNativeTarget "PolarSync" */;
+			buildPhases = (
+				21922D071BD7FF80005EEF5B /* Sources */,
+				21922D081BD7FF80005EEF5B /* Frameworks */,
+				21922D091BD7FF80005EEF5B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PolarSync;
+			productName = PolarSync;
+			productReference = 21922D0B1BD7FF80005EEF5B /* PolarSync.app */;
+			productType = "com.apple.product-type.application";
+		};
+		21922D261BD7FF80005EEF5B /* PolarSyncTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21922D3E1BD7FF80005EEF5B /* Build configuration list for PBXNativeTarget "PolarSyncTests" */;
+			buildPhases = (
+				21922D231BD7FF80005EEF5B /* Sources */,
+				21922D241BD7FF80005EEF5B /* Frameworks */,
+				21922D251BD7FF80005EEF5B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				21922D291BD7FF80005EEF5B /* PBXTargetDependency */,
+			);
+			name = PolarSyncTests;
+			productName = PolarSyncTests;
+			productReference = 21922D271BD7FF80005EEF5B /* PolarSyncTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		21922D311BD7FF80005EEF5B /* PolarSyncUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21922D411BD7FF80005EEF5B /* Build configuration list for PBXNativeTarget "PolarSyncUITests" */;
+			buildPhases = (
+				21922D2E1BD7FF80005EEF5B /* Sources */,
+				21922D2F1BD7FF80005EEF5B /* Frameworks */,
+				21922D301BD7FF80005EEF5B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				21922D341BD7FF80005EEF5B /* PBXTargetDependency */,
+			);
+			name = PolarSyncUITests;
+			productName = PolarSyncUITests;
+			productReference = 21922D321BD7FF80005EEF5B /* PolarSyncUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		21922D031BD7FF80005EEF5B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Rutger Nijhuis";
+				TargetAttributes = {
+					21922D0A1BD7FF80005EEF5B = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					21922D261BD7FF80005EEF5B = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 21922D0A1BD7FF80005EEF5B;
+					};
+					21922D311BD7FF80005EEF5B = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 21922D0A1BD7FF80005EEF5B;
+					};
+				};
+			};
+			buildConfigurationList = 21922D061BD7FF80005EEF5B /* Build configuration list for PBXProject "PolarSync" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 21922D021BD7FF80005EEF5B;
+			productRefGroup = 21922D0C1BD7FF80005EEF5B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				21922D0A1BD7FF80005EEF5B /* PolarSync */,
+				21922D261BD7FF80005EEF5B /* PolarSyncTests */,
+				21922D311BD7FF80005EEF5B /* PolarSyncUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		21922D091BD7FF80005EEF5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21922D211BD7FF80005EEF5B /* LaunchScreen.storyboard in Resources */,
+				21922D1E1BD7FF80005EEF5B /* Assets.xcassets in Resources */,
+				21922D191BD7FF80005EEF5B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21922D251BD7FF80005EEF5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21922D301BD7FF80005EEF5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		21922D071BD7FF80005EEF5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21922D161BD7FF80005EEF5B /* ViewController.m in Sources */,
+				21922D1C1BD7FF80005EEF5B /* PolarSync.xcdatamodeld in Sources */,
+				21922D131BD7FF80005EEF5B /* AppDelegate.m in Sources */,
+				21922D101BD7FF80005EEF5B /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21922D231BD7FF80005EEF5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21922D2C1BD7FF80005EEF5B /* PolarSyncTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21922D2E1BD7FF80005EEF5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21922D371BD7FF80005EEF5B /* PolarSyncUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		21922D291BD7FF80005EEF5B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 21922D0A1BD7FF80005EEF5B /* PolarSync */;
+			targetProxy = 21922D281BD7FF80005EEF5B /* PBXContainerItemProxy */;
+		};
+		21922D341BD7FF80005EEF5B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 21922D0A1BD7FF80005EEF5B /* PolarSync */;
+			targetProxy = 21922D331BD7FF80005EEF5B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		21922D171BD7FF80005EEF5B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21922D181BD7FF80005EEF5B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		21922D1F1BD7FF80005EEF5B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21922D201BD7FF80005EEF5B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		21922D391BD7FF80005EEF5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		21922D3A1BD7FF80005EEF5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		21922D3C1BD7FF80005EEF5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PolarSync/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = RR.PolarSync;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		21922D3D1BD7FF80005EEF5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PolarSync/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = RR.PolarSync;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		21922D3F1BD7FF80005EEF5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PolarSyncTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = RR.PolarSyncTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PolarSync.app/PolarSync";
+			};
+			name = Debug;
+		};
+		21922D401BD7FF80005EEF5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PolarSyncTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = RR.PolarSyncTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PolarSync.app/PolarSync";
+			};
+			name = Release;
+		};
+		21922D421BD7FF80005EEF5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PolarSyncUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = RR.PolarSyncUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PolarSync;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		21922D431BD7FF80005EEF5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PolarSyncUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = RR.PolarSyncUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PolarSync;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		21922D061BD7FF80005EEF5B /* Build configuration list for PBXProject "PolarSync" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21922D391BD7FF80005EEF5B /* Debug */,
+				21922D3A1BD7FF80005EEF5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21922D3B1BD7FF80005EEF5B /* Build configuration list for PBXNativeTarget "PolarSync" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21922D3C1BD7FF80005EEF5B /* Debug */,
+				21922D3D1BD7FF80005EEF5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		21922D3E1BD7FF80005EEF5B /* Build configuration list for PBXNativeTarget "PolarSyncTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21922D3F1BD7FF80005EEF5B /* Debug */,
+				21922D401BD7FF80005EEF5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		21922D411BD7FF80005EEF5B /* Build configuration list for PBXNativeTarget "PolarSyncUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21922D421BD7FF80005EEF5B /* Debug */,
+				21922D431BD7FF80005EEF5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		21922D1A1BD7FF80005EEF5B /* PolarSync.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				21922D1B1BD7FF80005EEF5B /* PolarSync.xcdatamodel */,
+			);
+			currentVersion = 21922D1B1BD7FF80005EEF5B /* PolarSync.xcdatamodel */;
+			path = PolarSync.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 21922D031BD7FF80005EEF5B /* Project object */;
+}
