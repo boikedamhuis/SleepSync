@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "RRDownloader.h"
+
+@import HealthKit;
 
 @interface AppDelegate ()
 
@@ -16,7 +19,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+    
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+    }
+    
     return YES;
 }
 
@@ -43,6 +52,46 @@
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
 }
+
+
+#pragma mark - BG Fetch
+
+-(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
+    HKHealthStore *store = [HKHealthStore new];
+    
+    HKObjectType *sleep = [HKObjectType categoryTypeForIdentifier:HKCategoryTypeIdentifierSleepAnalysis];
+    
+    switch ([store authorizationStatusForType:sleep]) {
+        case HKAuthorizationStatusNotDetermined:{
+            // Requesting stuff
+            UILocalNotification *not = [[UILocalNotification alloc]init];
+            not.fireDate = [NSDate date];
+            not.alertBody = @"Kon geen sleep data wegschrijven, je hebt nog geen toestemming gegeven";
+            not.soundName = UILocalNotificationDefaultSoundName;
+            [application scheduleLocalNotification:not];
+        }
+            break;
+        case HKAuthorizationStatusSharingAuthorized:
+            // We're good
+            [[RRDownloader downloader]syncSleep];
+            break;
+        case HKAuthorizationStatusSharingDenied:{
+            UILocalNotification *not = [[UILocalNotification alloc]init];
+            not.fireDate = [NSDate date];
+            not.alertBody = @"Sukkel, je hebt geen HealthKit permissie gegeven 😡";
+            not.soundName = UILocalNotificationDefaultSoundName;
+            [application scheduleLocalNotification:not];
+        }
+            break;
+    }
+
+    
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(20 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        completionHandler(UIBackgroundFetchResultNewData);
+    });
+}
+
 
 #pragma mark - Core Data stack
 

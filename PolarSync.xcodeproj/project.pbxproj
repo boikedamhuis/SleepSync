@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2122E2311BD811F7000EA431 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2122E2301BD811F7000EA431 /* HealthKit.framework */; };
 		21922D101BD7FF80005EEF5B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21922D0F1BD7FF80005EEF5B /* main.m */; };
 		21922D131BD7FF80005EEF5B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21922D121BD7FF80005EEF5B /* AppDelegate.m */; };
 		21922D161BD7FF80005EEF5B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21922D151BD7FF80005EEF5B /* ViewController.m */; };
@@ -16,6 +17,8 @@
 		21922D211BD7FF80005EEF5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21922D1F1BD7FF80005EEF5B /* LaunchScreen.storyboard */; };
 		21922D2C1BD7FF80005EEF5B /* PolarSyncTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21922D2B1BD7FF80005EEF5B /* PolarSyncTests.m */; };
 		21922D371BD7FF80005EEF5B /* PolarSyncUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21922D361BD7FF80005EEF5B /* PolarSyncUITests.m */; };
+		21922D471BD7FFE4005EEF5B /* RRDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 21922D461BD7FFE4005EEF5B /* RRDownloader.m */; settings = {ASSET_TAGS = (); }; };
+		F9A218EB33394FEA1AB76E5D /* libPods-PolarSync.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 427BB4C7B09E21232F2949E0 /* libPods-PolarSync.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2122E2301BD811F7000EA431 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		2122E2321BD811F7000EA431 /* PolarSync.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PolarSync.entitlements; sourceTree = "<group>"; };
 		21922D0B1BD7FF80005EEF5B /* PolarSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PolarSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21922D0F1BD7FF80005EEF5B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		21922D111BD7FF80005EEF5B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -53,6 +58,11 @@
 		21922D321BD7FF80005EEF5B /* PolarSyncUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PolarSyncUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21922D361BD7FF80005EEF5B /* PolarSyncUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PolarSyncUITests.m; sourceTree = "<group>"; };
 		21922D381BD7FF80005EEF5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21922D451BD7FFE4005EEF5B /* RRDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDownloader.h; sourceTree = "<group>"; };
+		21922D461BD7FFE4005EEF5B /* RRDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDownloader.m; sourceTree = "<group>"; };
+		427BB4C7B09E21232F2949E0 /* libPods-PolarSync.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PolarSync.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		51DA5AA06C50F62E1EBB1791 /* Pods-PolarSync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolarSync.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PolarSync/Pods-PolarSync.debug.xcconfig"; sourceTree = "<group>"; };
+		69E0C2F9EB4AE2C63D47C8D3 /* Pods-PolarSync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolarSync.release.xcconfig"; path = "Pods/Target Support Files/Pods-PolarSync/Pods-PolarSync.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9A218EB33394FEA1AB76E5D /* libPods-PolarSync.a in Frameworks */,
+				2122E2311BD811F7000EA431 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +99,8 @@
 				21922D2A1BD7FF80005EEF5B /* PolarSyncTests */,
 				21922D351BD7FF80005EEF5B /* PolarSyncUITests */,
 				21922D0C1BD7FF80005EEF5B /* Products */,
+				C785CE2E1E43A1801653BEF9 /* Pods */,
+				649FF4D44D9CA256619BC6EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +117,8 @@
 		21922D0D1BD7FF80005EEF5B /* PolarSync */ = {
 			isa = PBXGroup;
 			children = (
+				2122E2321BD811F7000EA431 /* PolarSync.entitlements */,
+				21922D441BD7FFCF005EEF5B /* Managers */,
 				21922D111BD7FF80005EEF5B /* AppDelegate.h */,
 				21922D121BD7FF80005EEF5B /* AppDelegate.m */,
 				21922D141BD7FF80005EEF5B /* ViewController.h */,
@@ -143,6 +159,33 @@
 			path = PolarSyncUITests;
 			sourceTree = "<group>";
 		};
+		21922D441BD7FFCF005EEF5B /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				21922D451BD7FFE4005EEF5B /* RRDownloader.h */,
+				21922D461BD7FFE4005EEF5B /* RRDownloader.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		649FF4D44D9CA256619BC6EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2122E2301BD811F7000EA431 /* HealthKit.framework */,
+				427BB4C7B09E21232F2949E0 /* libPods-PolarSync.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C785CE2E1E43A1801653BEF9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				51DA5AA06C50F62E1EBB1791 /* Pods-PolarSync.debug.xcconfig */,
+				69E0C2F9EB4AE2C63D47C8D3 /* Pods-PolarSync.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,9 +193,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21922D3B1BD7FF80005EEF5B /* Build configuration list for PBXNativeTarget "PolarSync" */;
 			buildPhases = (
+				44A8201CD27323C40E51B44B /* Check Pods Manifest.lock */,
 				21922D071BD7FF80005EEF5B /* Sources */,
 				21922D081BD7FF80005EEF5B /* Frameworks */,
 				21922D091BD7FF80005EEF5B /* Resources */,
+				8D78EC1E6118D6C521C4C590 /* Embed Pods Frameworks */,
+				2AB314229538CCEF82111BC7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,6 +256,15 @@
 				TargetAttributes = {
 					21922D0A1BD7FF80005EEF5B = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 6FV9F9SXS4;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					21922D261BD7FF80005EEF5B = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -268,6 +323,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2AB314229538CCEF82111BC7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PolarSync/Pods-PolarSync-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44A8201CD27323C40E51B44B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8D78EC1E6118D6C521C4C590 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PolarSync/Pods-PolarSync-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		21922D071BD7FF80005EEF5B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -275,6 +378,7 @@
 			files = (
 				21922D161BD7FF80005EEF5B /* ViewController.m in Sources */,
 				21922D1C1BD7FF80005EEF5B /* PolarSync.xcdatamodeld in Sources */,
+				21922D471BD7FFE4005EEF5B /* RRDownloader.m in Sources */,
 				21922D131BD7FF80005EEF5B /* AppDelegate.m in Sources */,
 				21922D101BD7FF80005EEF5B /* main.m in Sources */,
 			);
@@ -413,23 +517,33 @@
 		};
 		21922D3C1BD7FF80005EEF5B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51DA5AA06C50F62E1EBB1791 /* Pods-PolarSync.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PolarSync/PolarSync.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PolarSync/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RR.PolarSync;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		21922D3D1BD7FF80005EEF5B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69E0C2F9EB4AE2C63D47C8D3 /* Pods-PolarSync.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PolarSync/PolarSync.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PolarSync/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RR.PolarSync;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -500,6 +614,7 @@
 				21922D3D1BD7FF80005EEF5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21922D3E1BD7FF80005EEF5B /* Build configuration list for PBXNativeTarget "PolarSyncTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +623,7 @@
 				21922D401BD7FF80005EEF5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21922D411BD7FF80005EEF5B /* Build configuration list for PBXNativeTarget "PolarSyncUITests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +632,7 @@
 				21922D431BD7FF80005EEF5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
