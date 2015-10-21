@@ -17,6 +17,8 @@ static RRDownloader *sharedDownloader = nil;
 @interface RRDownloader ()<UIWebViewDelegate>{
     UIWebView *webview;
     AFHTTPSessionManager *manager;
+    
+    NSString *sleepURL;
 }
 
 @end
@@ -60,6 +62,19 @@ static RRDownloader *sharedDownloader = nil;
     webview = [UIWebView new];
     webview.delegate = self;
     
+    
+    NSDateFormatter *fm = [[NSDateFormatter alloc]init];
+    [fm setDateFormat:@"d.M.YYYY"];
+    
+    NSString *dateFrom = [fm stringFromDate:[[NSDate date] dateByAddingTimeInterval:-(60*60*24*30*6)]]; // 6 months back
+    if ([[NSUserDefaults standardUserDefaults]objectForKey:@"lastSync"]) {
+        dateFrom = [[[NSUserDefaults standardUserDefaults]objectForKey:@"lastSync"] dateByAddingTimeInterval:-(60*60*24)]; // day before last sync day
+    }
+    
+    NSString *dateUntill = [fm stringFromDate:[NSDate date]];
+    
+    sleepURL = [NSString stringWithFormat:@"https://flow.polar.com/activity/data/%@/%@?_=%f",dateFrom,dateUntill,[[NSDate date] timeIntervalSince1970]*1000];
+    
     NSDictionary *params = @{@"email" : @"boike.damhuis@me.com",
                              @"password" : @"polarflowapp123",
                              @"returnUrl" : @"https://flow.polar.com/"
@@ -73,7 +88,7 @@ static RRDownloader *sharedDownloader = nil;
               NSLog(@"Success:%@",response);
               
               // Request page in webview
-              [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://flow.polar.com/activity/data/28.9.2015/8.11.2015?_=1445449839878"]]];
+              [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:sleepURL]]];
               
           } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
               NSLog(@"fail: %@",error.description);
@@ -81,7 +96,7 @@ static RRDownloader *sharedDownloader = nil;
 }
 
 -(void)loadPolarData{
-    [manager GET:@"https://flow.polar.com/activity/data/28.9.2015/8.11.2015?_=1445449839878" parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+    [manager GET:sleepURL parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
         
         NSDictionary *response = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:nil];
         NSLog(@"Success:%@",response);
@@ -137,7 +152,7 @@ static RRDownloader *sharedDownloader = nil;
         [store deleteObjectsOfType:typ
                          predicate:perdicate
                     withCompletion:^(BOOL success, NSUInteger deletedObjectCount, NSError * _Nullable error) {
-                        NSLog(@"Deleted %lu items",deletedObjectCount);
+//                        NSLog(@"Deleted %lu items",deletedObjectCount);
                     }];
         
         // Save new data
@@ -148,7 +163,7 @@ static RRDownloader *sharedDownloader = nil;
             }
             
             if (success) {
-                NSLog(@"Saved sleep!");
+//                NSLog(@"Saved sleep!");
             }
             else{
                 NSLog(@"Wow, something else went wrong!!");
@@ -162,6 +177,9 @@ static RRDownloader *sharedDownloader = nil;
     not.soundName = UILocalNotificationDefaultSoundName;
     [[UIApplication sharedApplication] scheduleLocalNotification:not];
     [[NSNotificationCenter defaultCenter]postNotificationName:@"end" object:nil];
+    
+    [[NSUserDefaults standardUserDefaults]setObject:[NSDate date] forKey:@"lastSync"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
 }
 
 @end

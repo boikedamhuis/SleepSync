@@ -34,7 +34,10 @@
             [store requestAuthorizationToShareTypes:[NSSet setWithArray:@[sleep]]
                                           readTypes:[NSSet setWithArray:@[sleep]]
                                          completion:^(BOOL success, NSError * _Nullable error) {
-                                             [[RRDownloader downloader]syncSleep];
+                                             dispatch_sync(dispatch_get_main_queue(), ^{
+                                                 [[RRDownloader downloader]syncSleep];                                                 
+                                             });
+
                                          }];
         }
             
