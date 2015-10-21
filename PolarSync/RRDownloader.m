@@ -68,7 +68,7 @@ static RRDownloader *sharedDownloader = nil;
     
     NSString *dateFrom = [fm stringFromDate:[[NSDate date] dateByAddingTimeInterval:-(60*60*24*30*6)]]; // 6 months back
     if ([[NSUserDefaults standardUserDefaults]objectForKey:@"lastSync"]) {
-        dateFrom = [[[NSUserDefaults standardUserDefaults]objectForKey:@"lastSync"] dateByAddingTimeInterval:-(60*60*24)]; // day before last sync day
+        dateFrom = [fm stringFromDate:[[[NSUserDefaults standardUserDefaults]objectForKey:@"lastSync"] dateByAddingTimeInterval:-(60*60*24)]]; // day before last sync day
     }
     
     NSString *dateUntill = [fm stringFromDate:[NSDate date]];
