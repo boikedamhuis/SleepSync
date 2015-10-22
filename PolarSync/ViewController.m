@@ -24,8 +24,8 @@
     
     
     //Set fonts
-    _bedTimeLabel.font = [UIFont fontWithName:@"FSAlbert-ExtraBold" size:25];
-    _goalLabel.font = [UIFont fontWithName:@"FSAlbert-ExtraBold" size:85];
+    _bedTimeLabel.font = [UIFont fontWithName:@"FSAlbert-ExtraBold" size:28];
+    _goalLabel.font = [UIFont fontWithName:@"FSAlbert-ExtraBold" size:90];
     _quoteLabel.font = [UIFont fontWithName:@"FSAlbert-ExtraBold" size:17];
     _lastSyncedLabel.font = [UIFont fontWithName:@"FSAlbert-ExtraBold" size:12];
     
@@ -129,24 +129,29 @@
        // NSLog(@"%f", sleepNeeded);
         
         
+        //get sleep needed
+        
         int sleep = (int) sleepNeeded;
         int seconds = sleep % 60;
         int minutes = (sleep / 60) % 60;
         int hours = sleep / 3600;
         
-        
-        
+
+        //Convert to bedtime
         int remainingSeconds = 60 - seconds;
         int remainingMinutes = 60 - minutes;
         int remainingHours = 23 - hours;
 
+    
+        NSString *time = [NSString stringWithFormat:@"%02d:%02d",remainingHours, remainingMinutes];
         
         
-        NSString *time = [NSString stringWithFormat:@"%02d:%02d:%02d",remainingHours, remainingMinutes, remainingSeconds];
         
-        _bedTimeLabel.text = [NSString stringWithFormat:@"Go get some sleep at %@", time];
+        //Set text
+        _bedTimeLabel.numberOfLines = 2;
+        _bedTimeLabel.text = [NSString stringWithFormat:@"Bedtime for today \n %@", time];
         
-        
+                
     }
     
 }
