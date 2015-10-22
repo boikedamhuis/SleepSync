@@ -8,6 +8,7 @@
 
 #import "RRDownloader.h"
 #import "AFNetworking.h"
+#import "TFHpple.h"
 
 @import HealthKit;
 
@@ -73,7 +74,8 @@ static RRDownloader *sharedDownloader = nil;
     
     NSString *dateUntill = [fm stringFromDate:[NSDate date]];
     
-    sleepURL = [NSString stringWithFormat:@"https://flow.polar.com/activity/data/%@/%@?_=%f",dateFrom,dateUntill,[[NSDate date] timeIntervalSince1970]*1000];
+    sleepURL = [NSString stringWithFormat:@"https://flow.polar.com/activity/data/%@/%@?_=%f",dateFrom,dateUntill,[[NSDate date] timeIntervalSince1970]*1000]; // json page
+    sleepURL = [NSString stringWithFormat:@"https://flow.polar.com/training/day/%@",[fm stringFromDate:[NSDate date]]]; // html page
     
     NSDictionary *params = @{@"email" : @"boike.damhuis@me.com",
                              @"password" : @"polarflowapp123",
@@ -98,15 +100,24 @@ static RRDownloader *sharedDownloader = nil;
 -(void)loadPolarData{
     [manager GET:sleepURL parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
         
-        NSDictionary *response = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:nil];
-        NSLog(@"Success:%@",response);
+//        NSDictionary *response = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:nil];
+//        NSLog(@"Success:%@",response);
+        NSString *page = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSLog(@"%@",page);
         
-        [self processDataInHealthKit:response[@"data"]];
+        TFHpple *hpple = [[TFHpple alloc]initWithHTMLData:responseObject];
+        
+        NSArray *arr = [hpple searchWithXPathQuery:@""];
+        
+        
+//        [self processDataInHealthKit:response[@"data"]];
         
     } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
         NSLog(@"FAIL: %@",error.description);
     }];
 }
+
+
 
 
 #pragma mark - UIWebiewDelegate
