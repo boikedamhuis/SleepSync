@@ -102,13 +102,13 @@
     double currentSleep = [[NSUserDefaults standardUserDefaults] doubleForKey:@"sleepTime"];
     NSLog(@"%f", currentSleep);
     
-    float goal = currentSleep / 28800 * 100;
+    float goal = currentSleep / 32400 * 100;
     NSString *goalString = [NSString stringWithFormat:@"%.0f", goal];
     _goalLabel.text = [NSString stringWithFormat:@"%@%%", goalString];
 
     
     
-    sleepNeeded = 35000 - currentSleep;
+    sleepNeeded = 32400 - currentSleep;
     NSLog(@"%f", sleepNeeded);
     
     [self checkSucceededWithGoal:goal];
