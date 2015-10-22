@@ -12,6 +12,8 @@
             <string>FSAlbert-ExtraBold</string>
             <string>FSAlbert-ExtraBold</string>
             <string>FSAlbert-ExtraBold</string>
+            <string>FSAlbert-ExtraBold</string>
+            <string>FSAlbert-ExtraBold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -100,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="245" y="272"/>
+            <point key="canvasLocation" x="869" y="272"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="b4P-OQ-XbW">
@@ -290,6 +292,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HfU-oe-X9u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-384" y="272"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ilp-9w-iIN">
+            <objects>
+                <viewController id="zwh-ZM-6Y5" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FhU-I0-qd6"/>
+                        <viewControllerLayoutGuide type="bottom" id="D0t-JA-i5r"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aHT-wJ-dZv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Set a goal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tao-F7-dtT">
+                                <rect key="frame" x="88" y="114" width="424" height="57"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="A4g-ue-eHe"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="424" id="U2A-cZ-Z5q"/>
+                                    <constraint firstAttribute="width" constant="424" id="hzv-c6-TnL"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="57" id="nxQ-Pk-iZo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="FSAlbert-ExtraBold" family="FSAlbert" pointSize="49"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRt-yE-NsG">
+                                <rect key="frame" x="0.0" y="192" width="600" height="216"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="MZn-w7-yPb"/>
+                                    <constraint firstAttribute="height" constant="216" id="iAz-jT-ZFx"/>
+                                </constraints>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oji-4R-JZ1">
+                                <rect key="frame" x="164" y="534" width="272" height="46"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.13725490200000001" green="0.60392156860000001" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="272" id="C3B-qJ-Uxe"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="TC0-qM-Bk3"/>
+                                    <constraint firstAttribute="height" constant="46" id="qY0-bZ-jRK"/>
+                                    <constraint firstAttribute="width" constant="272" id="yYy-Qe-CPb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="FSAlbert-ExtraBold" family="FSAlbert" pointSize="19"/>
+                                <state key="normal" title="Confirm">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.14901960780000001" green="0.21960784310000001" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="oji-4R-JZ1" firstAttribute="centerX" secondItem="aHT-wJ-dZv" secondAttribute="centerX" id="H9Z-Vi-rCb"/>
+                            <constraint firstItem="fRt-yE-NsG" firstAttribute="centerY" secondItem="aHT-wJ-dZv" secondAttribute="centerY" id="aes-4Z-5he"/>
+                            <constraint firstItem="Tao-F7-dtT" firstAttribute="top" secondItem="FhU-I0-qd6" secondAttribute="bottom" constant="101" id="bhz-Qq-en1"/>
+                            <constraint firstItem="fRt-yE-NsG" firstAttribute="centerX" secondItem="aHT-wJ-dZv" secondAttribute="centerX" id="gny-NJ-m7X"/>
+                            <constraint firstItem="Tao-F7-dtT" firstAttribute="centerX" secondItem="aHT-wJ-dZv" secondAttribute="centerX" id="jci-1g-k3o"/>
+                            <constraint firstItem="D0t-JA-i5r" firstAttribute="top" secondItem="oji-4R-JZ1" secondAttribute="bottom" constant="30" id="nVL-wY-8bJ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qDF-ul-nKf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="242" y="272"/>
         </scene>
     </scenes>
     <resources>

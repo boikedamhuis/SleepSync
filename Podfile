@@ -6,6 +6,7 @@
 target 'PolarSync' do
 
 pod 'AFNetworking'
+pod 'CPPickerView'
 
 end
 
