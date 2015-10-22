@@ -271,6 +271,7 @@
                             <constraint firstItem="kkm-eW-afK" firstAttribute="top" secondItem="hsJ-s4-6PM" secondAttribute="bottom" constant="60" id="8rp-hb-AYV"/>
                             <constraint firstItem="doC-9e-CmO" firstAttribute="top" secondItem="Uzx-gN-yfn" secondAttribute="bottom" constant="36" id="AIc-8M-5QZ"/>
                             <constraint firstItem="vZx-7n-dtP" firstAttribute="top" secondItem="kkm-eW-afK" secondAttribute="bottom" constant="8" id="Aae-rT-9mb"/>
+                            <constraint firstItem="97B-gp-Gr4" firstAttribute="top" secondItem="Uzx-gN-yfn" secondAttribute="bottom" constant="45" id="FES-1Y-TMb"/>
                             <constraint firstItem="7H8-k5-IBa" firstAttribute="centerX" secondItem="keu-nC-uib" secondAttribute="centerX" id="G8j-Qy-8Ae"/>
                             <constraint firstItem="kkm-eW-afK" firstAttribute="centerX" secondItem="keu-nC-uib" secondAttribute="centerX" id="GrJ-0R-mMc"/>
                             <constraint firstItem="X0j-6t-3aa" firstAttribute="top" secondItem="keu-nC-uib" secondAttribute="topMargin" constant="300" id="Hvo-MA-YCE"/>
@@ -284,6 +285,7 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="SFQ-R4-XO0"/>
+                                <exclude reference="zBo-x9-K6z"/>
                                 <exclude reference="AIc-8M-5QZ"/>
                             </mask>
                         </variation>
