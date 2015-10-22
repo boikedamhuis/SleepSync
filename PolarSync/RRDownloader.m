@@ -108,7 +108,36 @@ static RRDownloader *sharedDownloader = nil;
     NSMutableArray *data = [[NSMutableArray alloc] initWithCapacity:0];
     for (TFHppleElement *element in nodes) {
         NSLog(@"%@",[[element firstChild] content]);
+        //start converting the string
+        NSString *fullSummary = [[element firstChild] content];
+        NSRange range = [fullSummary rangeOfString:@" "];
+        
+        int rangeInt;
+        if (range.location == NSNotFound) {
+                    }
+        
+        else {
+            
+            rangeInt = range.location;
+            NSMutableString *mu = [NSMutableString stringWithString:fullSummary];
+            [mu insertString:@":" atIndex:rangeInt];
+            [mu insertString:@"0" atIndex:0];
+            NSString *withoutSpaces = [mu stringByReplacingOccurrencesOfString:@" " withString:@""];
+            NSString* cleanedString = [withoutSpaces stringByTrimmingCharactersInSet: [NSCharacterSet letterCharacterSet]];
+
+            NSString* finished =
+            [[cleanedString componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ"]]
+             componentsJoinedByString:@""];
+            NSLog(@"CLEANED: %@", finished);
+        }
+        
+
     }
+    
+
+    
+    
+    
 }
 
 
