@@ -100,31 +100,46 @@ static RRDownloader *sharedDownloader = nil;
 }
 
 -(void)loadPolarData{
+    //Receive url
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@", summaryURL]];
     NSData *htmlDataFromUrl = [NSData dataWithContentsOfURL:url];
     TFHpple *parser = [TFHpple hppleWithHTMLData:htmlDataFromUrl];
+    
+    //Find sleep
     NSString *xPath = @"//body/div/div/div/div[6]/span[1]";
     NSArray *nodes = [parser searchWithXPathQuery:xPath];
     NSMutableArray *data = [[NSMutableArray alloc] initWithCapacity:0];
+    
+    //Convert to string
     for (TFHppleElement *element in nodes) {
         NSLog(@"%@",[[element firstChild] content]);
         //start converting the string
         NSString *fullSummary = [[element firstChild] content];
         NSRange range = [fullSummary rangeOfString:@" "];
         
+        
+        //Convert to workable string
         int rangeInt;
         if (range.location == NSNotFound) {
                     }
         
         else {
             
+            //Get first space location
             rangeInt = range.location;
+            
+            //Replace with :
             NSMutableString *mu = [NSMutableString stringWithString:fullSummary];
             [mu insertString:@":" atIndex:rangeInt];
+            
+            //Add extra 0
             [mu insertString:@"0" atIndex:0];
+            
+            //Remove spaces
             NSString *withoutSpaces = [mu stringByReplacingOccurrencesOfString:@" " withString:@""];
             NSString* cleanedString = [withoutSpaces stringByTrimmingCharactersInSet: [NSCharacterSet letterCharacterSet]];
-
+            
+            //Remove text
             NSString* finished =
             [[cleanedString componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ"]]
              componentsJoinedByString:@""];
