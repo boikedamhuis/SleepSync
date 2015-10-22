@@ -101,7 +101,10 @@ static RRDownloader *sharedDownloader = nil;
 
 -(void)loadPolarData{
     //Receive url
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@", summaryURL]];
+    
+    //DEBUG ONLY//
+    //NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@", summaryURL]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://flow.polar.com/activity/summary/22.10.2015/22.10.2015/day"]];
     NSData *htmlDataFromUrl = [NSData dataWithContentsOfURL:url];
     TFHpple *parser = [TFHpple hppleWithHTMLData:htmlDataFromUrl];
     
@@ -146,6 +149,8 @@ static RRDownloader *sharedDownloader = nil;
             
             //Result
             NSLog(@"CLEANED: %@", finished);
+            
+   
         }
         
 
