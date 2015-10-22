@@ -143,6 +143,8 @@ static RRDownloader *sharedDownloader = nil;
             NSString* finished =
             [[cleanedString componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ"]]
              componentsJoinedByString:@""];
+            
+            //Result
             NSLog(@"CLEANED: %@", finished);
         }
         
