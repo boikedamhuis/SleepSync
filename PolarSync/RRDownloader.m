@@ -128,7 +128,7 @@ static RRDownloader *sharedDownloader = nil;
     NSArray *nodes = [parser searchWithXPathQuery:xPath];
     NSMutableArray *data = [[NSMutableArray alloc] initWithCapacity:0];
     for (TFHppleElement *element in nodes) {
-        NSLog(@"Tag: '%@' Content: '%@'",element.tagName,element.raw);
+        NSLog(@"%@",[[element firstChild] content]);
     }
 }
 
