@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B22c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -17,35 +18,80 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hou je app actief, dan wordt je sleep gesynced 💤" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcS-Au-tJt">
-                                <rect key="frame" x="20" y="289" width="560" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="naL-tB-S6Y">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="naL-tB-S6Y">
                                 <rect key="frame" x="290" y="261" width="20" height="20"/>
                                 <animations/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go get some sleep at 10PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oip-rr-pvo">
+                                <rect key="frame" x="45" y="49" width="511" height="58"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="511" id="owx-3L-na2"/>
+                                    <constraint firstAttribute="height" constant="58" id="uCO-Mu-cIE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="75%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X89-8G-SEn">
+                                <rect key="frame" x="101" y="210" width="400" height="180"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="oSL-kS-29w"/>
+                                    <constraint firstAttribute="width" constant="400" id="qPF-mh-4LT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="85"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reached of your goal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hg-QT-VPj">
+                                <rect key="frame" x="215" y="370" width="170" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="99e-jJ-pMT"/>
+                                    <constraint firstAttribute="height" constant="21" id="YjU-WY-7OB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;last synced&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tk7-Rs-PYN">
+                                <rect key="frame" x="160" y="559" width="281" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="gEN-qB-sDO"/>
+                                    <constraint firstAttribute="width" constant="281" id="sSe-es-GZW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.14901960784313725" green="0.2196078431372549" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="fcS-Au-tJt" firstAttribute="top" secondItem="naL-tB-S6Y" secondAttribute="bottom" constant="8" id="6N6-lV-phh"/>
-                            <constraint firstItem="fcS-Au-tJt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dXT-RW-DuB"/>
+                            <constraint firstItem="oip-rr-pvo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="29" id="84c-td-wfp"/>
+                            <constraint firstItem="tk7-Rs-PYN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BJe-10-lpS"/>
+                            <constraint firstItem="2hg-QT-VPj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="370" id="c8T-Sg-UX4"/>
                             <constraint firstItem="naL-tB-S6Y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e4d-fg-HWu"/>
-                            <constraint firstItem="fcS-Au-tJt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ohI-to-jnJ"/>
-                            <constraint firstItem="fcS-Au-tJt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uOQ-IA-p2t"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="fcS-Au-tJt" secondAttribute="trailing" id="vWv-jj-NwY"/>
+                            <constraint firstItem="X89-8G-SEn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="j3I-dZ-vtz"/>
+                            <constraint firstItem="oip-rr-pvo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lHj-xb-e1y"/>
+                            <constraint firstItem="2hg-QT-VPj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pIA-J0-n8Z"/>
+                            <constraint firstItem="X89-8G-SEn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uKx-0e-XDt"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tk7-Rs-PYN" secondAttribute="bottom" constant="20" id="waW-kw-cGT"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bedTimeLabel" destination="oip-rr-pvo" id="erF-lH-DA1"/>
+                        <outlet property="goalLabel" destination="X89-8G-SEn" id="1xW-Ny-e2i"/>
+                        <outlet property="lastSyncedLabel" destination="tk7-Rs-PYN" id="UHY-nC-gWq"/>
                         <outlet property="loader" destination="naL-tB-S6Y" id="cbG-22-Iv9"/>
+                        <outlet property="quoteLabel" destination="2hg-QT-VPj" id="w2h-d2-lU8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="245" y="272"/>
         </scene>
     </scenes>
 </document>

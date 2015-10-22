@@ -134,6 +134,10 @@ static RRDownloader *sharedDownloader = nil;
 
         NSDate *startDate = [NSDate dateWithTimeIntervalSince1970:startTimeInterval];
         NSLog(@"Sleeptime:%.0f",sleepTime);
+        
+        [[NSUserDefaults standardUserDefaults] setDouble:[dayData[@"summaries"][0][@"sleepTime"]doubleValue]/1000 forKey:@"sleepTime"];
+        
+        [[NSUserDefaults standardUserDefaults] synchronize];
         if (sleepTime == 0.) {
             NSLog(@"No sleep data available..");
             continue;
@@ -170,6 +174,8 @@ static RRDownloader *sharedDownloader = nil;
             }
         }];
     }
+    //Store sleeptime
+   
     
     UILocalNotification *not = [[UILocalNotification alloc]init];
     not.fireDate = [NSDate date];

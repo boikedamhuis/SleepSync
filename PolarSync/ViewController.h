@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ViewController : UIViewController {
+    float sleepNeeded;
+}
+@property (weak, nonatomic) IBOutlet UILabel *bedTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *goalLabel;
+@property (weak, nonatomic) IBOutlet UILabel *quoteLabel;
+@property (weak, nonatomic) IBOutlet UILabel *lastSyncedLabel;
+-(void)checkSucceededWithGoal:(float)goal;
 
 @end
 

@@ -17,7 +17,8 @@
 		21922D211BD7FF80005EEF5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21922D1F1BD7FF80005EEF5B /* LaunchScreen.storyboard */; };
 		21922D2C1BD7FF80005EEF5B /* PolarSyncTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21922D2B1BD7FF80005EEF5B /* PolarSyncTests.m */; };
 		21922D371BD7FF80005EEF5B /* PolarSyncUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21922D361BD7FF80005EEF5B /* PolarSyncUITests.m */; };
-		21922D471BD7FFE4005EEF5B /* RRDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 21922D461BD7FFE4005EEF5B /* RRDownloader.m */; settings = {ASSET_TAGS = (); }; };
+		21922D471BD7FFE4005EEF5B /* RRDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 21922D461BD7FFE4005EEF5B /* RRDownloader.m */; };
+		6F273E9C1BD9125E006E6CAE /* main.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F273E9B1BD91245006E6CAE /* main.ttf */; };
 		F9A218EB33394FEA1AB76E5D /* libPods-PolarSync.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 427BB4C7B09E21232F2949E0 /* libPods-PolarSync.a */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		427BB4C7B09E21232F2949E0 /* libPods-PolarSync.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PolarSync.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51DA5AA06C50F62E1EBB1791 /* Pods-PolarSync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolarSync.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PolarSync/Pods-PolarSync.debug.xcconfig"; sourceTree = "<group>"; };
 		69E0C2F9EB4AE2C63D47C8D3 /* Pods-PolarSync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolarSync.release.xcconfig"; path = "Pods/Target Support Files/Pods-PolarSync/Pods-PolarSync.release.xcconfig"; sourceTree = "<group>"; };
+		6F273E9B1BD91245006E6CAE /* main.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = main.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		21922D021BD7FF80005EEF5B = {
 			isa = PBXGroup;
 			children = (
+				6F273E9A1BD91230006E6CAE /* Resources */,
 				21922D0D1BD7FF80005EEF5B /* PolarSync */,
 				21922D2A1BD7FF80005EEF5B /* PolarSyncTests */,
 				21922D351BD7FF80005EEF5B /* PolarSyncUITests */,
@@ -177,6 +180,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6F273E9A1BD91230006E6CAE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6F273E9B1BD91245006E6CAE /* main.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		C785CE2E1E43A1801653BEF9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,7 +267,7 @@
 				TargetAttributes = {
 					21922D0A1BD7FF80005EEF5B = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = 6FV9F9SXS4;
+						DevelopmentTeam = SSB75EQHXF;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -302,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21922D211BD7FF80005EEF5B /* LaunchScreen.storyboard in Resources */,
+				6F273E9C1BD9125E006E6CAE /* main.ttf in Resources */,
 				21922D1E1BD7FF80005EEF5B /* Assets.xcassets in Resources */,
 				21922D191BD7FF80005EEF5B /* Main.storyboard in Resources */,
 			);
@@ -471,7 +483,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -508,7 +520,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -524,8 +536,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PolarSync/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = RR.PolarSync;
+				PRODUCT_BUNDLE_IDENTIFIER = com.boike.PolarSync;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -540,8 +553,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PolarSync/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = RR.PolarSync;
+				PRODUCT_BUNDLE_IDENTIFIER = com.boike.PolarSync;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

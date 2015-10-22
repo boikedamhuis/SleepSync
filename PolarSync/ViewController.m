@@ -21,6 +21,30 @@
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(DidStartDownload) name:@"start" object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(didEndDownload) name:@"end" object:nil];
+    
+    
+    //Set fonts
+    _bedTimeLabel.font = [UIFont fontWithName:@"FSAlbert-ExtraBold" size:25];
+    _goalLabel.font = [UIFont fontWithName:@"FSAlbert-ExtraBold" size:85];
+    _quoteLabel.font = [UIFont fontWithName:@"FSAlbert-ExtraBold" size:17];
+    _lastSyncedLabel.font = [UIFont fontWithName:@"FSAlbert-ExtraBold" size:12];
+    
+    //Set last synced date
+    _lastSyncedLabel.text = [NSString stringWithFormat:@"%@", [[NSUserDefaults standardUserDefaults]objectForKey:@"lastSyncedDate"]];
+    
+    
+    //Calculate goal
+    double currentSleep = [[NSUserDefaults standardUserDefaults] doubleForKey:@"sleepTime"];
+    NSLog(@"%f", currentSleep);
+    
+    float goal = currentSleep / 28800 * 100;
+    NSString *goalString = [NSString stringWithFormat:@"%.0f", goal];
+    _goalLabel.text = [NSString stringWithFormat:@"%@%%", goalString];
+    [self checkSucceededWithGoal:goal];
+    
+    
+
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -62,6 +86,69 @@
 }
 -(void)didEndDownload{
     [self.loader stopAnimating];
+    
+    //Create a timelabel
+    NSDate *currentTime = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd'-'MM''HH':'mm':'ss'"];
+    NSString *date = [dateFormatter stringFromDate: currentTime];
+    NSString *resultString = [NSString stringWithFormat:@"Last synced: %@", date];
+    _lastSyncedLabel.text = [NSString stringWithFormat:@"%@", resultString];
+    
+    //Store data
+    [[NSUserDefaults standardUserDefaults] setObject:resultString forKey:@"lastSyncedDate"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    double currentSleep = [[NSUserDefaults standardUserDefaults] doubleForKey:@"sleepTime"];
+    NSLog(@"%f", currentSleep);
+    
+    float goal = currentSleep / 28800 * 100;
+    NSString *goalString = [NSString stringWithFormat:@"%.0f", goal];
+    _goalLabel.text = [NSString stringWithFormat:@"%@%%", goalString];
+
+    
+    
+    sleepNeeded = 35000 - currentSleep;
+    NSLog(@"%f", sleepNeeded);
+    
+    [self checkSucceededWithGoal:goal];
+}
+-(void)checkSucceededWithGoal:(float)goal {
+    
+    if (goal > (float)99.999) {
+        NSLog(@"Goal reached");
+        _goalLabel.font = [UIFont fontWithName:@"FSAlbert-ExtraBold" size:70];
+        _goalLabel.text = @"Reached!";
+        _quoteLabel.hidden = YES;
+        _bedTimeLabel.hidden = YES;
+
+    } else {
+        _quoteLabel.hidden = NO;
+        _bedTimeLabel.hidden = NO;
+        
+       // NSLog(@"%f", sleepNeeded);
+        
+        
+        int sleep = (int) sleepNeeded;
+        int seconds = sleep % 60;
+        int minutes = (sleep / 60) % 60;
+        int hours = sleep / 3600;
+        
+        
+        
+        int remainingSeconds = 60 - seconds;
+        int remainingMinutes = 60 - minutes;
+        int remainingHours = 23 - hours;
+
+        
+        
+        NSString *time = [NSString stringWithFormat:@"%02d:%02d:%02d",remainingHours, remainingMinutes, remainingSeconds];
+        
+        _bedTimeLabel.text = [NSString stringWithFormat:@"Go get some sleep at %@", time];
+        
+        
+    }
+    
 }
 
 @end
