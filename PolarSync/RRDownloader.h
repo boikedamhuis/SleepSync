@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RRDownloader : NSObject
+@interface RRDownloader : NSObject {
+    NSString *summaryURL;
+}
 
 +(RRDownloader*)downloader;
 

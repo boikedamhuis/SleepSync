@@ -75,7 +75,9 @@ static RRDownloader *sharedDownloader = nil;
     NSString *dateUntill = [fm stringFromDate:[NSDate date]];
     
     sleepURL = [NSString stringWithFormat:@"https://flow.polar.com/activity/data/%@/%@?_=%f",dateFrom,dateUntill,[[NSDate date] timeIntervalSince1970]*1000]; // json page
-    sleepURL = [NSString stringWithFormat:@"https://flow.polar.com/training/day/%@",[fm stringFromDate:[NSDate date]]]; // html page
+    sleepURL = [NSString stringWithFormat:@"https://flow.polar.com/training/day/%@/%@/day",[fm stringFromDate:[NSDate date]],[fm stringFromDate:[NSDate date]]]; // html page
+    summaryURL =[NSString stringWithFormat:@"https://flow.polar.com/activity/summary/%@/%@/day",[fm stringFromDate:[NSDate date]],[fm stringFromDate:[NSDate date]]]; // html page
+    
     
     NSDictionary *params = @{@"email" : @"boike.damhuis@me.com",
                              @"password" : @"polarflowapp123",
@@ -98,30 +100,7 @@ static RRDownloader *sharedDownloader = nil;
 }
 
 -(void)loadPolarData{
-    /*[manager GET:sleepURL parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
-        
-//        NSDictionary *response = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:nil];
-//        NSLog(@"Success:%@",response);
-        NSString *page = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
-        NSLog(@"%@",page);
-        sleepURL = [NSString stringWithFormat:@"https://flow.polar.com/training/day/22.10.2015"]; // html page
-        TFHpple *hpple = [[TFHpple alloc]initWithHTMLData:responseObject];
-        
-        NSArray *arr = [hpple searchWithXPathQuery:@"//div[@class='col-sm-12']/div/div/div/div/div/div"];
-        
-        for (TFHppleElement *element in arr) {
-                NSLog(@"Tag: '%@' Content: '%@'",element.tagName,element.raw);
-        }
-        
-        
-//        [self processDataInHealthKit:response[@"data"]];
-        
-    } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
-        NSLog(@"FAIL: %@",error.description);
-    }];*/
-    
-    
-    NSURL *url = [NSURL URLWithString:@"https://flow.polar.com/activity/summary/22.10.2015/22.10.2015/day?today=1&_=1445546110522"];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@", summaryURL]];
     NSData *htmlDataFromUrl = [NSData dataWithContentsOfURL:url];
     TFHpple *parser = [TFHpple hppleWithHTMLData:htmlDataFromUrl];
     NSString *xPath = @"//body/div/div/div/div[6]/span[1]";
