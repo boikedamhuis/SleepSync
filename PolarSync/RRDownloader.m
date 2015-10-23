@@ -11,7 +11,7 @@
 #import "TFHpple.h"
 
 #define EMAIL @"email@here.com"
-#define PASSWORD @"passwordhere123"
+#define PASSWORD @"PasswordHere"
 
 
 @import HealthKit;
@@ -74,7 +74,7 @@ static RRDownloader *sharedDownloader = nil;
     [fm setDateFormat:@"d.M.YYYY"];
     
     
-    sleepDate = [[NSDate date] dateByAddingTimeInterval:-(60*60*24)]; // Yesterday
+    sleepDate = [[NSDate date] dateByAddingTimeInterval:0]; // Yesterday
     sleepDate = [[NSCalendar currentCalendar] dateFromComponents:[[NSCalendar currentCalendar] components:(NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay) fromDate:sleepDate]]; // Yesterday at 00:00 in current timezone
     
     sleepURL = [NSString stringWithFormat:@"https://flow.polar.com/activity/summary/%@/%@/day",[fm stringFromDate:sleepDate],[fm stringFromDate:sleepDate]];
@@ -111,10 +111,29 @@ static RRDownloader *sharedDownloader = nil;
             TFHppleElement *element = [[nodes firstObject] firstChild];
             NSLog(@"%@", [element content]);
             
-            NSDateFormatter *fmElement = [NSDateFormatter new];
-            [fmElement setDateFormat:@"H 'hours' m 'minutes'"];
+            NSString *fullSummary = [element content];
+            NSRange range = [fullSummary rangeOfString:@" "];
+            NSString *finished;
+            int rangeInt;
+            if (range.location == NSNotFound) {
+                
+            } else {
+                rangeInt = range.location;
+                NSMutableString *mu = [NSMutableString stringWithString:fullSummary];
+                [mu insertString:@":" atIndex:rangeInt];
+                
+                NSString *withoutSpaces = [mu stringByReplacingOccurrencesOfString:@" " withString:@""];
+                NSString *cleanedString = [withoutSpaces stringByTrimmingCharactersInSet:[NSCharacterSet letterCharacterSet]];
+                
+                finished = [[cleanedString componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"abcdefghilklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"]] componentsJoinedByString:@""];
+                NSLog(@"%@", finished);
+                
+            }
             
-            NSDate *formattedDate = [fmElement dateFromString:[element content]];
+            NSDateFormatter *fmElement = [NSDateFormatter new];
+            [fmElement setDateFormat:@"H':'m'"];
+            
+            NSDate *formattedDate = [fmElement dateFromString:finished];
             
             NSCalendar *cal = [NSCalendar currentCalendar];
             
