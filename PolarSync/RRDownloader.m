@@ -20,6 +20,8 @@ static RRDownloader *sharedDownloader = nil;
     AFHTTPSessionManager *manager;
     
     NSString *sleepURL;
+    
+    NSDate *sleepDate;
 }
 
 @end
@@ -67,17 +69,11 @@ static RRDownloader *sharedDownloader = nil;
     fm = [[NSDateFormatter alloc]init];
     [fm setDateFormat:@"d.M.YYYY"];
     
-    NSString *dateFrom = [fm stringFromDate:[[NSDate date] dateByAddingTimeInterval:-(60*60*24*30*6)]]; // 6 months back
-    if ([[NSUserDefaults standardUserDefaults]objectForKey:@"lastSync"]) {
-        dateFrom = [fm stringFromDate:[[[NSUserDefaults standardUserDefaults]objectForKey:@"lastSync"] dateByAddingTimeInterval:-(60*60*24)]]; // day before last sync day
-    }
     
-    NSString *dateUntill = [fm stringFromDate:[NSDate date]];
+    sleepDate = [[NSDate date] dateByAddingTimeInterval:-(60*60*24)]; // Yesterday
+    sleepDate = [[NSCalendar currentCalendar] dateFromComponents:[[NSCalendar currentCalendar] components:(NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay) fromDate:sleepDate]]; // Yesterday at 00:00 in current timezone
     
-    sleepURL = [NSString stringWithFormat:@"https://flow.polar.com/activity/data/%@/%@?_=%f",dateFrom,dateUntill,[[NSDate date] timeIntervalSince1970]*1000]; // json page
-    sleepURL = [NSString stringWithFormat:@"https://flow.polar.com/training/day/%@/%@/day",[fm stringFromDate:[NSDate date]],[fm stringFromDate:[NSDate date]]]; // html page
-    summaryURL =[NSString stringWithFormat:@"https://flow.polar.com/activity/summary/%@/%@/day",[fm stringFromDate:[NSDate date]],[fm stringFromDate:[NSDate date]]]; // html page
-    
+    sleepURL = [NSString stringWithFormat:@"https://flow.polar.com/activity/summary/%@/%@/day",[fm stringFromDate:sleepDate],[fm stringFromDate:sleepDate]];
     
     NSDictionary *params = @{@"email" : @"boike.damhuis@me.com",
                              @"password" : @"polarflowapp123",
@@ -100,104 +96,36 @@ static RRDownloader *sharedDownloader = nil;
 }
 
 -(void)loadPolarData{
-    //Receive url
     
-    //DEBUG ONLY//
-    //NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@", summaryURL]];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://flow.polar.com/activity/summary/22.10.2015/22.10.2015/day"]];
-    NSData *htmlDataFromUrl = [NSData dataWithContentsOfURL:url];
-    TFHpple *parser = [TFHpple hppleWithHTMLData:htmlDataFromUrl];
-    
-    //Find sleep
-    NSString *xPath = @"//body/div/div/div/div[6]/span[1]";
-    NSArray *nodes = [parser searchWithXPathQuery:xPath];
-    NSMutableArray *data = [[NSMutableArray alloc] initWithCapacity:0];
-    
-    //Convert to string
-    for (TFHppleElement *element in nodes) {
-        NSLog(@"%@",[[element firstChild] content]);
-        //start converting the string
-        NSString *fullSummary = [[element firstChild] content];
+    [manager GET:sleepURL parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
         
-        
-        //##--DEBUG--##//
-        //fullSummary = @"1 uren en 30 minuten";
-        fullSummary = @"12 uren en 3 minuten";
-        //fullSummary = @"1 uren en 2 minuten";
-        
-        
-        
-        NSRange range = [fullSummary rangeOfString:@" "];
-        
-        
-        //Convert to workable string
-        int rangeInt;
-        if (range.location == NSNotFound) {
-                    }
-        
-        else {
+        TFHpple *parser = [TFHpple hppleWithData:responseObject isXML:NO];
+        NSString *xPath = @"//body/div/div/div/div[6]/span[1]";
+        NSArray *nodes = [parser searchWithXPathQuery:xPath];
+       
+        if ([nodes firstObject]) {
+            TFHppleElement *element = [[nodes firstObject] firstChild];
+            NSLog(@"%@", [element content]);
             
-            //Get first space location
-            rangeInt = range.location;
+            NSDateFormatter *fmElement = [NSDateFormatter new];
+            [fmElement setDateFormat:@"H 'hours' m 'minutes'"];
             
-            //Replace with :
-            NSMutableString *mu = [NSMutableString stringWithString:fullSummary];
-            [mu insertString:@":" atIndex:rangeInt];
+            NSDate *formattedDate = [fmElement dateFromString:[element content]];
             
-            //Add extra 0
-            //[mu insertString:@"0" atIndex:0];
+            NSCalendar *cal = [NSCalendar currentCalendar];
             
-            //Remove spaces
-            NSString *withoutSpaces = [mu stringByReplacingOccurrencesOfString:@" " withString:@""];
-            NSString* cleanedString = [withoutSpaces stringByTrimmingCharactersInSet: [NSCharacterSet letterCharacterSet]];
+            NSDateComponents *comps=[cal components:(NSCalendarUnitHour|NSCalendarUnitMinute) fromDate:formattedDate];
             
-            //Remove text
-            NSString* finished =
-            [[cleanedString componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ"]]
-             componentsJoinedByString:@""];
+            int hours = (int)[comps hour];
+            int minutes = (int)[comps minute];
             
-            //Result
+            NSDate *wakeUpDate = [sleepDate dateByAddingTimeInterval:hours*60*60+minutes*60];
+            [self processDataInHealthKitWithSleepDate:sleepDate wakeDate:wakeUpDate];
             
-        
-            NSString *fullDate = [NSString stringWithFormat:@"%@ %@",[fm stringFromDate:[NSDate date]], finished ];
-            NSLog(@"%@", fullDate);
-      
-  
-            
-            
-            
-            NSTimeInterval seconds; // assume this exists
-            NSDate* ts_utc = [NSDate dateWithTimeIntervalSince1970:seconds];
-            
-            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-            [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
-            [dateFormatter setDateFormat:@"dd.MM.yyyy HH:mm"];
-
-
-
-            
-            NSDate *dateFromString = [[NSDate alloc] init];
-            dateFromString = [dateFormatter dateFromString:fullDate];
-            NSString *stringFromDate = [dateFormatter stringFromDate:dateFromString];
-
-            NSTimeInterval interval  = [dateFromString timeIntervalSince1970] ;
-           
-            
-            NSLog(@"interval=%.0f",interval) ;
-
-            
-            
-            
-   
         }
-        
-
-    }
-    
-
-    
-    
-    
+    } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
+        NSLog(@"Failed to load url:%@\n%@",sleepURL,error.description);
+    }];
 }
 
 
@@ -217,40 +145,20 @@ static RRDownloader *sharedDownloader = nil;
 
 #pragma mark - HealthKit
 
--(void)processDataInHealthKit:(NSArray*)data{
+-(void)processDataInHealthKitWithSleepDate:(NSDate*)startDate wakeDate:(NSDate*)wakeDate{
     HKHealthStore *store = [HKHealthStore new];
     HKCategoryType *typ = [HKCategoryType categoryTypeForIdentifier:HKCategoryTypeIdentifierSleepAnalysis];
-    NSTimeInterval timeZoneFix = [[NSTimeZone defaultTimeZone]secondsFromGMT];
     
-    for (NSDictionary *dayData in data) {
-        NSTimeInterval sleepTime = [dayData[@"summaries"][0][@"sleepTime"]doubleValue]/1000;
-        NSTimeInterval startTimeInterval = ([dayData[@"summaries"][0][@"startTime"]doubleValue]/1000)-timeZoneFix;
-
-        NSDate *startDate = [NSDate dateWithTimeIntervalSince1970:startTimeInterval];
-        NSLog(@"Sleeptime:%.0f",sleepTime);
-        
-        [[NSUserDefaults standardUserDefaults] setDouble:[dayData[@"summaries"][0][@"sleepTime"]doubleValue]/1000 forKey:@"sleepTime"];
-        
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        if (sleepTime == 0.) {
-            NSLog(@"No sleep data available..");
-            continue;
-        }
-        
-        NSDate *endDate = [startDate dateByAddingTimeInterval:sleepTime];
-        
-        NSLog(@"Start:%@\nEnd:%@",startDate,endDate);
-        
         // Now real shit happens
         
-        HKCategorySample *object = [HKCategorySample categorySampleWithType:typ value:HKCategoryValueSleepAnalysisAsleep startDate:startDate endDate:endDate];
-        NSPredicate *perdicate = [HKQuery predicateForSamplesWithStartDate:startDate endDate:endDate options:HKQueryOptionStrictStartDate];
+        HKCategorySample *object = [HKCategorySample categorySampleWithType:typ value:HKCategoryValueSleepAnalysisAsleep startDate:startDate endDate:wakeDate];
+        NSPredicate *perdicate = [HKQuery predicateForSamplesWithStartDate:startDate endDate:wakeDate options:HKQueryOptionStrictStartDate];
         
         // Delete previous sleeps
         [store deleteObjectsOfType:typ
                          predicate:perdicate
                     withCompletion:^(BOOL success, NSUInteger deletedObjectCount, NSError * _Nullable error) {
-//                        NSLog(@"Deleted %lu items",deletedObjectCount);
+                        NSLog(@"Deleted %lu items",deletedObjectCount);
                     }];
         
         // Save new data
@@ -261,13 +169,13 @@ static RRDownloader *sharedDownloader = nil;
             }
             
             if (success) {
-//                NSLog(@"Saved sleep!");
+                NSLog(@"Saved sleep!");
             }
             else{
                 NSLog(@"Wow, something else went wrong!!");
             }
         }];
-    }
+    
     //Store sleeptime
    
     
