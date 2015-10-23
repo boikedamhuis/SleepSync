@@ -21,8 +21,6 @@
 		6F01CB491BDA4671009C427C /* moon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F01CB481BDA4671009C427C /* moon.png */; };
 		6F273E9C1BD9125E006E6CAE /* main.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F273E9B1BD91245006E6CAE /* main.ttf */; };
 		6F273E9E1BD938AA006E6CAE /* textfields.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F273E9D1BD938AA006E6CAE /* textfields.png */; };
-		6F273EA51BD93CFA006E6CAE /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F273EA31BD93CFA006E6CAE /* user.png */; };
-		6F273EA61BD93CFA006E6CAE /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F273EA41BD93CFA006E6CAE /* lock.png */; };
 		F9A218EB33394FEA1AB76E5D /* libPods-PolarSync.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 427BB4C7B09E21232F2949E0 /* libPods-PolarSync.a */; };
 /* End PBXBuildFile section */
 
@@ -326,12 +324,10 @@
 			files = (
 				6F273E9E1BD938AA006E6CAE /* textfields.png in Resources */,
 				21922D211BD7FF80005EEF5B /* LaunchScreen.storyboard in Resources */,
-				6F273EA51BD93CFA006E6CAE /* user.png in Resources */,
 				6F273E9C1BD9125E006E6CAE /* main.ttf in Resources */,
 				6F01CB491BDA4671009C427C /* moon.png in Resources */,
 				21922D1E1BD7FF80005EEF5B /* Assets.xcassets in Resources */,
 				21922D191BD7FF80005EEF5B /* Main.storyboard in Resources */,
-				6F273EA61BD93CFA006E6CAE /* lock.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
