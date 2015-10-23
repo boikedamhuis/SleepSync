@@ -18,6 +18,7 @@
 		21922D2C1BD7FF80005EEF5B /* PolarSyncTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21922D2B1BD7FF80005EEF5B /* PolarSyncTests.m */; };
 		21922D371BD7FF80005EEF5B /* PolarSyncUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21922D361BD7FF80005EEF5B /* PolarSyncUITests.m */; };
 		21922D471BD7FFE4005EEF5B /* RRDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 21922D461BD7FFE4005EEF5B /* RRDownloader.m */; };
+		6F01CB491BDA4671009C427C /* moon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F01CB481BDA4671009C427C /* moon.png */; };
 		6F273E9C1BD9125E006E6CAE /* main.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F273E9B1BD91245006E6CAE /* main.ttf */; };
 		6F273E9E1BD938AA006E6CAE /* textfields.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F273E9D1BD938AA006E6CAE /* textfields.png */; };
 		6F273EA51BD93CFA006E6CAE /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F273EA31BD93CFA006E6CAE /* user.png */; };
@@ -67,6 +68,7 @@
 		427BB4C7B09E21232F2949E0 /* libPods-PolarSync.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PolarSync.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51DA5AA06C50F62E1EBB1791 /* Pods-PolarSync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolarSync.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PolarSync/Pods-PolarSync.debug.xcconfig"; sourceTree = "<group>"; };
 		69E0C2F9EB4AE2C63D47C8D3 /* Pods-PolarSync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolarSync.release.xcconfig"; path = "Pods/Target Support Files/Pods-PolarSync/Pods-PolarSync.release.xcconfig"; sourceTree = "<group>"; };
+		6F01CB481BDA4671009C427C /* moon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moon.png; sourceTree = "<group>"; };
 		6F273E9B1BD91245006E6CAE /* main.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = main.ttf; sourceTree = "<group>"; };
 		6F273E9D1BD938AA006E6CAE /* textfields.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textfields.png; sourceTree = "<group>"; };
 		6F273EA31BD93CFA006E6CAE /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 		6F273E9A1BD91230006E6CAE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6F01CB481BDA4671009C427C /* moon.png */,
 				6F273E9B1BD91245006E6CAE /* main.ttf */,
 				6F273E9D1BD938AA006E6CAE /* textfields.png */,
 				6F273EA31BD93CFA006E6CAE /* user.png */,
@@ -325,6 +328,7 @@
 				21922D211BD7FF80005EEF5B /* LaunchScreen.storyboard in Resources */,
 				6F273EA51BD93CFA006E6CAE /* user.png in Resources */,
 				6F273E9C1BD9125E006E6CAE /* main.ttf in Resources */,
+				6F01CB491BDA4671009C427C /* moon.png in Resources */,
 				21922D1E1BD7FF80005EEF5B /* Assets.xcassets in Resources */,
 				21922D191BD7FF80005EEF5B /* Main.storyboard in Resources */,
 				6F273EA61BD93CFA006E6CAE /* lock.png in Resources */,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B22c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -7,6 +7,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="main.ttf">
+            <string>FSAlbert-ExtraBold</string>
             <string>FSAlbert-ExtraBold</string>
             <string>FSAlbert-ExtraBold</string>
             <string>FSAlbert-ExtraBold</string>
@@ -29,43 +30,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="naL-tB-S6Y">
-                                <rect key="frame" x="290" y="290" width="20" height="20"/>
-                                <animations/>
-                            </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go get some sleep at 10PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oip-rr-pvo">
-                                <rect key="frame" x="45" y="49" width="511" height="58"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="511" id="owx-3L-na2"/>
-                                    <constraint firstAttribute="height" constant="58" id="uCO-Mu-cIE"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="75%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X89-8G-SEn">
-                                <rect key="frame" x="100" y="210" width="400" height="180"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="oSL-kS-29w"/>
-                                    <constraint firstAttribute="width" constant="400" id="qPF-mh-4LT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="85"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reached of your goal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hg-QT-VPj">
-                                <rect key="frame" x="215" y="370" width="170" height="21"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="170" id="99e-jJ-pMT"/>
-                                    <constraint firstAttribute="height" constant="21" id="YjU-WY-7OB"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;last synced&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tk7-Rs-PYN">
                                 <rect key="frame" x="160" y="559" width="281" height="21"/>
                                 <animations/>
@@ -77,28 +41,54 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 hours and 23 minutes of sleep last night" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fha-Sw-Dw3">
+                                <rect key="frame" x="0.0" y="460" width="600" height="49"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="7DU-4F-hUc"/>
+                                    <constraint firstAttribute="height" constant="49" id="Ht8-AV-i7z"/>
+                                    <constraint firstAttribute="width" constant="600" id="dp7-ic-Y4I"/>
+                                    <constraint firstAttribute="height" constant="49" id="wFu-mE-FNO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="FSAlbert-ExtraBold" family="FSAlbert" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7DU-4F-hUc"/>
+                                        <exclude reference="Ht8-AV-i7z"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moon.png" translatesAutoresizingMaskIntoConstraints="NO" id="cdb-Jh-45X">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="9uq-bC-BRR"/>
+                                    <constraint firstAttribute="width" constant="200" id="RDn-ji-5NK"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.14901960784313725" green="0.2196078431372549" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="oip-rr-pvo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="29" id="84c-td-wfp"/>
                             <constraint firstItem="tk7-Rs-PYN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BJe-10-lpS"/>
-                            <constraint firstItem="naL-tB-S6Y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LLm-AQ-Ivx"/>
-                            <constraint firstItem="2hg-QT-VPj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="370" id="c8T-Sg-UX4"/>
-                            <constraint firstItem="naL-tB-S6Y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e4d-fg-HWu"/>
-                            <constraint firstItem="X89-8G-SEn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="j3I-dZ-vtz"/>
-                            <constraint firstItem="oip-rr-pvo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lHj-xb-e1y"/>
-                            <constraint firstItem="2hg-QT-VPj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pIA-J0-n8Z"/>
-                            <constraint firstItem="X89-8G-SEn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uKx-0e-XDt"/>
+                            <constraint firstItem="fha-Sw-Dw3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SJA-fc-hXb"/>
+                            <constraint firstItem="cdb-Jh-45X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZaS-4A-oke"/>
+                            <constraint firstItem="cdb-Jh-45X" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="aph-LG-yj9"/>
+                            <constraint firstItem="fha-Sw-Dw3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bQS-pM-Zvo"/>
+                            <constraint firstItem="fha-Sw-Dw3" firstAttribute="top" secondItem="cdb-Jh-45X" secondAttribute="bottom" constant="60" id="ff2-4N-5V5"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tk7-Rs-PYN" secondAttribute="bottom" constant="20" id="waW-kw-cGT"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="SJA-fc-hXb"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
-                        <outlet property="bedTimeLabel" destination="oip-rr-pvo" id="erF-lH-DA1"/>
-                        <outlet property="goalLabel" destination="X89-8G-SEn" id="1xW-Ny-e2i"/>
                         <outlet property="lastSyncedLabel" destination="tk7-Rs-PYN" id="UHY-nC-gWq"/>
-                        <outlet property="loader" destination="naL-tB-S6Y" id="cbG-22-Iv9"/>
-                        <outlet property="quoteLabel" destination="2hg-QT-VPj" id="w2h-d2-lU8"/>
+                        <outlet property="quoteLabel" destination="fha-Sw-Dw3" id="jK3-S8-Fq4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -364,6 +354,7 @@
     </scenes>
     <resources>
         <image name="lock.png" width="150" height="230"/>
+        <image name="moon.png" width="450" height="450"/>
         <image name="textfields.png" width="238" height="37"/>
         <image name="user.png" width="160" height="160"/>
     </resources>

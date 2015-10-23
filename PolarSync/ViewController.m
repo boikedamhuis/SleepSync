@@ -148,8 +148,8 @@
         
         
         //Set text
-        _bedTimeLabel.numberOfLines = 2;
-        _bedTimeLabel.text = [NSString stringWithFormat:@"Bedtime for today \n %@", time];
+        _quoteLabel.numberOfLines = 2;
+        _quoteLabel.text = [NSString stringWithFormat:@"x hours and y minutes of sleep \n last night"];
         
                 
     }
