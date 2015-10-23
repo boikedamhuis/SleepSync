@@ -10,6 +10,7 @@
 
 @interface RRDownloader : NSObject {
     NSString *summaryURL;
+    NSDateFormatter *fm;
 }
 
 +(RRDownloader*)downloader;

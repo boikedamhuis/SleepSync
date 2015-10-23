@@ -64,7 +64,7 @@ static RRDownloader *sharedDownloader = nil;
     webview.delegate = self;
     
     
-    NSDateFormatter *fm = [[NSDateFormatter alloc]init];
+    fm = [[NSDateFormatter alloc]init];
     [fm setDateFormat:@"d.M.YYYY"];
     
     NSString *dateFrom = [fm stringFromDate:[[NSDate date] dateByAddingTimeInterval:-(60*60*24*30*6)]]; // 6 months back
@@ -122,7 +122,7 @@ static RRDownloader *sharedDownloader = nil;
         
         //##--DEBUG--##//
         //fullSummary = @"1 uren en 30 minuten";
-        //fullSummary = @"12 uren en 3 minuten";
+        fullSummary = @"12 uren en 3 minuten";
         //fullSummary = @"1 uren en 2 minuten";
         
         
@@ -157,7 +157,36 @@ static RRDownloader *sharedDownloader = nil;
              componentsJoinedByString:@""];
             
             //Result
-            NSLog(@"CLEANED: %@", finished);
+            
+        
+            NSString *fullDate = [NSString stringWithFormat:@"%@ %@",[fm stringFromDate:[NSDate date]], finished ];
+            NSLog(@"%@", fullDate);
+      
+  
+            
+            
+            
+            NSTimeInterval seconds; // assume this exists
+            NSDate* ts_utc = [NSDate dateWithTimeIntervalSince1970:seconds];
+            
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
+            [dateFormatter setDateFormat:@"dd.MM.yyyy HH:mm"];
+
+
+
+            
+            NSDate *dateFromString = [[NSDate alloc] init];
+            dateFromString = [dateFormatter dateFromString:fullDate];
+            NSString *stringFromDate = [dateFormatter stringFromDate:dateFromString];
+
+            NSTimeInterval interval  = [dateFromString timeIntervalSince1970] ;
+           
+            
+            NSLog(@"interval=%.0f",interval) ;
+
+            
+            
             
    
         }
