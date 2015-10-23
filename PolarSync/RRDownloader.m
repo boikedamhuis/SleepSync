@@ -118,6 +118,15 @@ static RRDownloader *sharedDownloader = nil;
         NSLog(@"%@",[[element firstChild] content]);
         //start converting the string
         NSString *fullSummary = [[element firstChild] content];
+        
+        
+        //##--DEBUG--##//
+        //fullSummary = @"1 uren en 30 minuten";
+        //fullSummary = @"12 uren en 3 minuten";
+        //fullSummary = @"1 uren en 2 minuten";
+        
+        
+        
         NSRange range = [fullSummary rangeOfString:@" "];
         
         
@@ -136,7 +145,7 @@ static RRDownloader *sharedDownloader = nil;
             [mu insertString:@":" atIndex:rangeInt];
             
             //Add extra 0
-            [mu insertString:@"0" atIndex:0];
+            //[mu insertString:@"0" atIndex:0];
             
             //Remove spaces
             NSString *withoutSpaces = [mu stringByReplacingOccurrencesOfString:@" " withString:@""];
