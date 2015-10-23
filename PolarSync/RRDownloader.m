@@ -10,6 +10,10 @@
 #import "AFNetworking.h"
 #import "TFHpple.h"
 
+#define EMAIL @"email@here.com"
+#define PASSWORD @"passwordhere123"
+
+
 @import HealthKit;
 
 static RRDownloader *sharedDownloader = nil;
@@ -75,8 +79,8 @@ static RRDownloader *sharedDownloader = nil;
     
     sleepURL = [NSString stringWithFormat:@"https://flow.polar.com/activity/summary/%@/%@/day",[fm stringFromDate:sleepDate],[fm stringFromDate:sleepDate]];
     
-    NSDictionary *params = @{@"email" : @"boike.damhuis@me.com",
-                             @"password" : @"polarflowapp123",
+    NSDictionary *params = @{@"email" : EMAIL,
+                             @"password" : PASSWORD,
                              @"returnUrl" : @"https://flow.polar.com/"
                              };
     
@@ -179,12 +183,6 @@ static RRDownloader *sharedDownloader = nil;
     //Store sleeptime
    
     
-    UILocalNotification *not = [[UILocalNotification alloc]init];
-    not.fireDate = [NSDate date];
-    not.alertBody = @"Sleep is gesynced 😘";
-    not.soundName = UILocalNotificationDefaultSoundName;
-    [[UIApplication sharedApplication] scheduleLocalNotification:not];
-    [[NSNotificationCenter defaultCenter]postNotificationName:@"end" object:nil];
     
     [[NSUserDefaults standardUserDefaults]setObject:[NSDate date] forKey:@"lastSync"];
     [[NSUserDefaults standardUserDefaults]synchronize];

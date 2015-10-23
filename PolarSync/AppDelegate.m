@@ -73,7 +73,7 @@
             // Requesting stuff
             UILocalNotification *not = [[UILocalNotification alloc]init];
             not.fireDate = [NSDate date];
-            not.alertBody = @"Kon geen sleep data wegschrijven, je hebt nog geen toestemming gegeven";
+            not.alertBody = @"Permisions denied!";
             not.soundName = UILocalNotificationDefaultSoundName;
             [application scheduleLocalNotification:not];
         }
@@ -85,7 +85,7 @@
         case HKAuthorizationStatusSharingDenied:{
             UILocalNotification *not = [[UILocalNotification alloc]init];
             not.fireDate = [NSDate date];
-            not.alertBody = @"Sukkel, je hebt geen HealthKit permissie gegeven 😡";
+            not.alertBody = @"Permissions denied!";
             not.soundName = UILocalNotificationDefaultSoundName;
             [application scheduleLocalNotification:not];
         }
