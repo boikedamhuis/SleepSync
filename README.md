@@ -22,6 +22,6 @@ From now on it will sync all your sleep to Apple Health using this little app. K
 
 Happy ~~training~~ sleeping!
 
-Feel free to send me push requests
+Feel free to send me pull requests
 
 ---
